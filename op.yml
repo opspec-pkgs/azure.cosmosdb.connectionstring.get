@@ -1,0 +1,57 @@
+name: github.com/opspec-pkgs/azure.cosmosdb.connectionstring.get
+description: gets an azure cosmosdb connection string
+inputs:
+  subscriptionId:
+    string:
+      constraints: { minLength: 1 }
+      description: id of azure subscription
+  loginId:
+    string:
+      constraints: { minLength: 1 }
+      description: id of user, service principal, or app to login with
+  loginSecret:
+    string:
+      constraints: { minLength: 1 }
+      description: secret of user, service principal, or app to login with
+  loginTenantId:
+    string:
+      constraints: { minLength: 1 }
+      description: tenant id of user, service principal, or app to login with
+  resourceGroup:
+    string:
+      constraints: { minLength: 1 }
+      description: resource group of the storage account
+  cosmosDbAccount:
+    string:
+      constraints: { minLength: 3 }
+      description: name of the storage account
+  key:
+    string:
+      constraints: { enum: [primary, secondary] }
+      description: name of the key
+      default: secondary
+  loginType:
+    string:
+      constraints: { enum: [user, sp]}
+      description: type of login; 'user' (default) or 'sp' for service principal
+      default: user
+outputs:
+  connectionString:
+    string:
+      description: the connection string
+run:
+  container:
+    image: { ref: 'azuresdk/azure-cli-python:2.0.17' }
+    cmd: [ /cmd.sh ]
+    files: { /cmd.sh }
+    stdOut:
+      connectionString=: connectionString
+    envVars:
+      subscriptionId:
+      loginId:
+      loginSecret:
+      loginTenantId:
+      resourceGroup:
+      cosmosDbAccount:
+      key:
+      loginType:
