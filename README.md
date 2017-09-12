@@ -30,11 +30,11 @@ op:
     subscriptionId:
     loginId:
     loginSecret:
-    loginTenantId:
     resourceGroup:
     cosmosDbAccount:
     # begin optional args
     key:
+    loginTenantId:
     loginType:
     # end optional args
   outputs:
