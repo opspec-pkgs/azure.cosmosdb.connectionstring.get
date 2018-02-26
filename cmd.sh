@@ -39,4 +39,4 @@ accountKey=$(az cosmosdb list-keys \
     --query "${key}MasterKey" \
     --output tsv)
 
-echo "connectionString=$(printf "AccountEndpoint=%s;AccountKey=%s;" "$accountEndpoint" "$accountKey")"
+echo -n "AccountEndpoint=$accountEndpoint;AccountKey=$accountKey;" > /connectionString
