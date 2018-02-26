@@ -1,43 +1,45 @@
 [![Build Status](https://travis-ci.org/opspec-pkgs/azure.cosmosdb.connectionstring.get.svg?branch=master)](https://travis-ci.org/opspec-pkgs/azure.cosmosdb.connectionstring.get)
 
+<img src="icon.svg" alt="icon" height="100px">
+
 # Problem statement
 
 gets an azure cosmosdb connection string
 
+# Format
+
+this version of the pkg is in [![opspec 0.1.5](https://img.shields.io/badge/opspec-0.1.5-brightgreen.svg?colorA=6b6b6b&colorB=fc16be)](https://opspec.io/0.1.5/packages.html) format
+
 # Example usage
 
-> note: in examples, VERSION represents a version of the
-> azure.cosmosdb.connectionstring.get pkg
-
-## install
+## Install
 
 ```shell
-opctl pkg install github.com/opspec-pkgs/azure.cosmosdb.connectionstring.get#VERSION
+opctl pkg install github.com/opspec-pkgs/azure.cosmosdb.connectionstring.get#1.0.1
 ```
 
-## run
+## Run
 
 ```
-opctl run github.com/opspec-pkgs/azure.cosmosdb.connectionstring.get#VERSION
+opctl run github.com/opspec-pkgs/azure.cosmosdb.connectionstring.get#1.0.1
 ```
 
-## compose
+## Compose
 
 ```yaml
 op:
-  pkg: { ref: github.com/opspec-pkgs/azure.cosmosdb.connectionstring.get#VERSION }
-  inputs:
-    subscriptionId:
+pkg: { ref: github.com/opspec-pkgs/azure.cosmosdb.connectionstring.get#1.0.1 }
+inputs:
+    cosmosDbAccount:
     loginId:
     loginSecret:
-    resourceGroup:
-    cosmosDbAccount:
-    # begin optional args
-    key:
     loginTenantId:
+    resourceGroup:
+    subscriptionId:
+    # params w/ default
+    key:
     loginType:
-    # end optional args
-  outputs:
+outputs:
     connectionString:
 ```
 
