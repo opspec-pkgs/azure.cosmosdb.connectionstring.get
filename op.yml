@@ -1,6 +1,5 @@
 name: github.com/opspec-pkgs/azure.cosmosdb.connectionstring.get
 description: gets an azure cosmosdb connection string
-icon: /icon.svg
 inputs:
   subscriptionId:
     string:

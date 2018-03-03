@@ -28,18 +28,18 @@ opctl run github.com/opspec-pkgs/azure.cosmosdb.connectionstring.get#1.0.1
 
 ```yaml
 op:
-pkg: { ref: github.com/opspec-pkgs/azure.cosmosdb.connectionstring.get#1.0.1 }
-inputs:
-    cosmosDbAccount:
+  pkg: { ref: github.com/opspec-pkgs/azure.cosmosdb.connectionstring.get#1.0.1 }
+  inputs:
+    subscriptionId:
     loginId:
     loginSecret:
     loginTenantId:
     resourceGroup:
-    subscriptionId:
+    cosmosDbAccount:
     # params w/ default
     key:
     loginType:
-outputs:
+  outputs:
     connectionString:
 ```
 
